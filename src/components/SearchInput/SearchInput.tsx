@@ -14,7 +14,7 @@ const InputWrapper = styled.div<{ isvalue: string }>`
   padding-right: ${(props) => (props.isvalue ? "1rem" : "0rem")};
   border-radius: ${(props) => (props.isvalue ? "6px" : "0px")};
   gap: 0.5rem;
-  max-width: 600px;
+  max-width: 260px;
   width: 100%;
   transition: all 0.2s ease-in;
   background-color: ${(props) =>
@@ -33,6 +33,7 @@ const InputWrapper = styled.div<{ isvalue: string }>`
   }
   & .input-reset-button {
     display: ${(props) => (props.isvalue ? "block" : "none")};
+    height: 20px;
   }
 `;
 

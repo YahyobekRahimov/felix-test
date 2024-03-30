@@ -37,4 +37,9 @@ body {
   --primary-background: #f8f8f8;
   --text-primary: #fefefe;
   --color-primary: #6200ee;
+
+  --my-vars-palette-primary-main: var(--color-primary) !important;
+  --my-vars-palette-primary-light: #42a5f5;
+  --my-vars-palette-primary-dark: #8133f1 !important;
+  --my-vars-palette-primary-contrastText: #fff;
 }

@@ -7,6 +7,14 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import Layout from "./layout/Layout";
+import {
+  Experimental_CssVarsProvider as CssVarsProvider,
+  experimental_extendTheme as extendTheme,
+} from "@mui/material";
+
+const theme = extendTheme({
+  cssVarPrefix: "my-vars",
+});
 
 function App() {
   const router = createBrowserRouter([
@@ -25,7 +33,9 @@ function App() {
   ]);
   return (
     <Layout>
-      <RouterProvider router={router}></RouterProvider>
+      <CssVarsProvider theme={theme}>
+        <RouterProvider router={router}></RouterProvider>
+      </CssVarsProvider>
     </Layout>
   );
 }

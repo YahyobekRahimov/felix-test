@@ -28,7 +28,12 @@ export default function Header() {
             style={{ paddingTop: "10px", paddingBottom: "10px" }}
             justifyContent="space-between"
           >
-            <Stack direction="row" gap="2rem" alignItems="center">
+            <Stack
+              direction="row"
+              gap="2rem"
+              alignItems="center"
+              width="full"
+            >
               <Logo />
               <SearchInput />
             </Stack>

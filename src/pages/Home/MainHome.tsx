@@ -1,4 +1,4 @@
-import { Button as ButtonBase, Stack } from "@mui/material";
+import { Button as ButtonBase, Grid, Stack } from "@mui/material";
 import styled from "styled-components";
 import Container from "../../components/Container";
 
@@ -18,10 +18,36 @@ const Text = styled.p`
 const Button = styled(ButtonBase)`
   height: max-content;
   text-transform: none !important;
-  display: flex;
-  gap: 10px;
   padding-left: 25px !important;
   padding-right: 25px !important;
+`;
+
+const Card = styled.li`
+  background-color: white;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 32px;
+
+  & h3 {
+    margin-bottom: 7px;
+  }
+
+  & h4 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  & div h4 {
+    margin-top: 20px;
+  }
+`;
+
+const WrapperCard = styled.ul`
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
 `;
 
 export default function MainHome() {
@@ -64,17 +90,19 @@ export default function MainHome() {
           </H1>
           <Text>Your books today</Text>
         </Stack>
-        <Button variant="contained">
-          <span style={{ transform: "scale(1.5)" }}>+</span>
+        <Button
+          variant="contained"
+          startIcon={<span style={{ fontSize: "16px" }}>+</span>}
+        >
           <span>Create a book</span>
         </Button>
       </Stack>
-      <Stack component="ul">
+      <WrapperCard>
         {data.map((BookData, index) => {
           const { author, cover, isbn, pages, published, title } =
             BookData.book;
           return (
-            <li key={index}>
+            <Card key={index}>
               <h3>{title}</h3>
               <h4>Cover: {cover}</h4>
               <h4>Pages: {pages}</h4>
@@ -86,10 +114,10 @@ export default function MainHome() {
                   {author} / {published}
                 </h4>
               </Stack>
-            </li>
+            </Card>
           );
         })}
-      </Stack>
+      </WrapperCard>
     </Container>
   );
 }
