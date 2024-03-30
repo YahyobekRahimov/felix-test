@@ -22,3 +22,19 @@
   src: url("../public/fonts/mulish-v13-latin-700.woff2")
     format("woff2");
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+:root {
+  --primary-background: #f8f8f8;
+  --text-primary: #fefefe;
+  --color-primary: #6200ee;
+}

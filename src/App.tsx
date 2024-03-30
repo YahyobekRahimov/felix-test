@@ -6,6 +6,7 @@ import "./App.css";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
+import Layout from "./layout/Layout";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,11 @@ function App() {
       element: <Home />,
     },
   ]);
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <Layout>
+      <RouterProvider router={router}></RouterProvider>
+    </Layout>
+  );
 }
 
 export default App;
